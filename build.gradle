@@ -1,0 +1,50 @@
+apply plugin: "java"
+
+version '1.0'
+
+sourceSets.main.java.srcDirs = ["src"]
+
+repositories{
+    mavenCentral()
+    maven{ url 'https://www.jitpack.io' }
+}
+
+java{
+    targetCompatibility = 8
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
+ext{
+}
+
+//java 8 backwards compatibility flag
+allprojects{
+    apply plugin: 'maven-publish'
+    group = 'com.github.DSFdsfWxp'
+    version = '1.0'
+
+    tasks.withType(JavaCompile){
+        options.compilerArgs.addAll(['--release', '8'])
+    }
+}
+
+dependencies{
+}
+
+
+
+jar {
+    archiveFileName = "${base.archivesBaseName}.jar"
+
+    from{
+        configurations.runtimeClasspath.collect{ it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+publishing{
+    publications{
+        maven(MavenPublication){
+            from components.java
+        }
+    }
+}
