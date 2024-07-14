@@ -1,4 +1,7 @@
 apply plugin: "java"
+apply plugin: 'maven-publish'
+group = 'com.github.DSFdsfWxp'
+version = '1.0'
 
 version '1.0'
 
@@ -19,10 +22,6 @@ ext{
 
 //java 8 backwards compatibility flag
 allprojects{
-    apply plugin: 'maven-publish'
-    group = 'com.github.DSFdsfWxp'
-    version = '1.0'
-
     tasks.withType(JavaCompile){
         options.compilerArgs.addAll(['--release', '8'])
     }
