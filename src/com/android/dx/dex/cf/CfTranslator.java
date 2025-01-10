@@ -108,7 +108,7 @@ public class CfTranslator {
 
     public static ClassDefItem translate(DxContext context, DirectClassFile cf,
             CfOptions cfOptions, DexOptions dexOptions, DexFile dexFile) {
-        return translate(context, cf, null, dexOptions, dexFile);
+        return translate(context, cf, null, cfOptions, dexOptions, dexFile);
     }
 
     /**
