@@ -264,9 +264,9 @@ public class DirectClassFile implements ClassFile {
 
     /** {@inheritDoc} */
     @Override
-    public int getMagic() {
+    public void getMagic() {
         parseToInterfacesIfNecessary();
-        return getMagic0();
+        getMagic0();
     }
 
     /** {@inheritDoc} */

@@ -35,7 +35,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return the value in question
      */
-    public int getMagic();
+    public void getMagic();
 
     /**
      * Gets the field {@code minor_version}.
