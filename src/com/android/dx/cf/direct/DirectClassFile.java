@@ -214,6 +214,10 @@ public class DirectClassFile implements ClassFile {
         this(new ByteArray(bytes), filePath, strictParse);
     }
 
+    public DirectClassFile(byte[] bytes, String filePath) {
+        this(bytes, filePath, true);
+    }
+
     /**
      * Sets the parse observer for this instance.
      *
